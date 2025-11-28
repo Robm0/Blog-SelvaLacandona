@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   // Datos de los 10 mamíferos actualizados
   const animales = [
     {
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Felidae",
       alimentacion: "Carnívoro (venados, pecaríes, monos, reptiles)",
       poblacion: "≈ 60 – 170 individuos estimados en la región protegida",
-      img: "Extras/Jaguar.jpg"
+      img: "Extras/jaguar.jpg",
     },
 
     {
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Tapiridae",
       alimentacion: "Herbívoro (hojas, frutos, brotes)",
       poblacion: "≈ 150 – 250 en zonas núcleo de la Lacandona",
-      img: "Extras/Tapir.jpg"
+      img: "Extras/tapir.jpg",
     },
 
     {
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Atelidae",
       alimentacion: "Frugívoro (frutas, semillas, hojas tiernas)",
       poblacion: "En declive; vulnerable pero presente en grupos",
-      img: "Extras/Mono araña.jpg"
+      img: "Extras/mono araña.jpg",
     },
 
     {
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Felidae",
       alimentacion: "Carnívoro (roedores, aves, reptiles)",
       poblacion: "Estable, pero amenazado por pérdida de hábitat",
-      img: "Extras/Ocelote.jpg"
+      img: "Extras/ocelote.jpg",
     },
 
     {
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Cervidae",
       alimentacion: "Herbívoro (hierbas, frutos, brotes, hojas)",
       poblacion: "Común en zonas conservadas",
-      img: "Extras/Venado cola blanca.jpg"
+      img: "Extras/venado cola blanca.jpg",
     },
 
     {
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Tayassuidae",
       alimentacion: "Omnívoro (frutos, raíces, insectos)",
       poblacion: "Abundante en varios sectores de la Lacandona",
-      img: "Extras/Pecari de collar.jpg"
+      img: "Extras/pecari de collar.jpg",
     },
 
     {
@@ -62,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Procyonidae",
       alimentacion: "Omnívoro (frutas, insectos, huevos, pequeños vertebrados)",
       poblacion: "Común en áreas cercanas a cuerpos de agua",
-      img: "Extras/Mapache.jpg"
+      img: "Extras/mapache.jpg",
     },
 
     {
@@ -71,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Procyonidae",
       alimentacion: "Omnívoro (frutas, insectos, pequeños vertebrados)",
       poblacion: "Muy común; observado en grupos grandes",
-      img: "Extras/Coati.jpg"
+      img: "Extras/coati.jpg",
     },
 
     {
@@ -80,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Dasypodidae",
       alimentacion: "Insectívoro (hormigas, termitas, larvas)",
       poblacion: "Frecuente en zonas de matorral y selva baja",
-      img: "Extras/Armadillo nueve bandas.jpg"
+      img: "Extras/armadillo nueve bandas.jpg",
     },
 
     {
@@ -89,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Myrmecophagidae",
       alimentacion: "Insectívoro (hormigas, termitas)",
       poblacion: "Presente pero difícil de observar",
-      img: "Extras/Oso hormiguero menor.jpg"
+      img: "Extras/oso hormiguero menor.jpg",
     },
 
     {
@@ -98,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Didelphidae",
       alimentacion: "Omnívoro (frutas, insectos, carroña, pequeños animales)",
       poblacion: "Muy común y adaptable a distintos ambientes",
-      img: "Extras/Tlacuache comun.jpg"
+      img: "Extras/tlacuache comun.jpg",
     },
 
     {
@@ -107,13 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
       familia: "Procyonidae",
       alimentacion: "Omnívoro (frutas, insectos, aves pequeñas)",
       poblacion: "Moderado; activo principalmente de noche",
-      img: "Extras/Cacomixtle.jpg"
-    }
+      img: "Extras/cacomixtle.jpg",
+    },
   ];
 
   const contenedor = document.getElementById("contenedor");
 
-  animales.forEach(a => {
+  animales.forEach((a) => {
     const card = document.createElement("div");
     card.className = "card";
 
@@ -165,16 +164,14 @@ Alimentación: ${a.alimentacion}
 Población estimada: ${a.poblacion}
       `.trim();
 
-      navigator.clipboard.writeText(texto)
-        .then(() => {
-          card.querySelector(".copy-btn").textContent = "¡Copiado!";
-          setTimeout(() => {
-            card.querySelector(".copy-btn").textContent = "Copiar información";
-          }, 1500);
-        });
+      navigator.clipboard.writeText(texto).then(() => {
+        card.querySelector(".copy-btn").textContent = "¡Copiado!";
+        setTimeout(() => {
+          card.querySelector(".copy-btn").textContent = "Copiar información";
+        }, 1500);
+      });
     });
 
     contenedor.appendChild(card);
   });
-
 });
